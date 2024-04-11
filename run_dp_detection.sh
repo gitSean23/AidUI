@@ -66,14 +66,14 @@ then
   rmdir $destdir
   cp ./input/*.* ./UIED/data/input
 
-  echo "--------------------------------------execute DP detection & evaluation--------------------------------------"
-  eval "$(conda shell.bash hook)"
-  conda activate dl_dp_obj_det_env
-  python main.py
-else
-  echo "EVAL MODE is OFF"
-  echo "--------------------------------------execute DP detection & evaluation--------------------------------------"
-  eval "$(conda shell.bash hook)"
-  conda activate dl_dp_obj_det_env
-  python main.py
-fi
+#   echo "--------------------------------------execute DP detection & evaluation--------------------------------------"
+#   eval "$(conda shell.bash hook)"
+#   conda activate dl_dp_obj_det_env
+#   python main.py
+# else
+#   echo "EVAL MODE is OFF"
+#   echo "--------------------------------------execute DP detection & evaluation--------------------------------------"
+#   eval "$(conda shell.bash hook)"
+#   conda activate dl_dp_obj_det_env
+#   python main.py
+# fi

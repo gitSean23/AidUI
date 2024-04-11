@@ -8,6 +8,7 @@ import dp_resolver.resolver as resolver
 import evaluation.evaluation as evaluation
 from config import *
 import utils.utils as utils
+import subprocess
 
 import warnings
 warnings.filterwarnings('ignore')
@@ -60,14 +61,16 @@ for i in range(len(ocr_files)):
     dp_predicted = resolver.resolve_dp(input_to_resolver, score_threshold_value)
     dp_predictions_labels.append(dp_predicted["labels"]) # dp_predicted["labels"] is an array of labels
     dp_predictions_bin.append(dp_predicted["labels_binarization"]) # dp_predicted["labels_binarization"] is an array of 0/1 binary values
-    dp_predictions_segments.append(dp_predicted["segments"]) # dp_predicted["segments"] is an array of segment objects
+    dp_predictions_segments.append(dp_predicted["segments"]) # dp_predicted["segments"] is an array of segment objects'
+
+    print(subprocess.run(["/run_dp_detection.sh"], shell=True))
 
     # print("------------dp ground truth-----------")
-    dp_ground_truth = evaluation.get_dp_ground_truth(image_file)
-    dp_expectations_labels.append(dp_ground_truth["labels"])
-    dp_expectations_bin.append(dp_ground_truth["labels_binarization"])
-    dp_expectations_segments.append(dp_ground_truth["segments"])
-    types.append(dp_ground_truth["type"])
+    # dp_ground_truth = evaluation.get_dp_ground_truth(image_file)
+    # dp_expectations_labels.append(dp_ground_truth["labels"])
+    # dp_expectations_bin.append(dp_ground_truth["labels_binarization"])
+    # dp_expectations_segments.append(dp_ground_truth["segments"])
+    # types.append(dp_ground_truth["type"])
 
     # print("------------predicted and ground truth labels-----------")
     # print("dp_predicted[labels]", dp_predicted["labels"])
@@ -87,12 +90,12 @@ for i in range(len(ocr_files)):
     #     utils.print_dictionary(ui_dp, "ui_dp")
     #     print("########################################## DEBUG ####################################")
 
-    print("----------------------------------------------------------------------------------------------------------------------------------------------")
+    # print("----------------------------------------------------------------------------------------------------------------------------------------------")
 
 # evaluation
 # tp_fp_matrix = evaluation.set_tp_fp_matrix(dp_predictions_bin, dp_expectations_bin)
 # evaluation.print_tp_fp_matrix(tp_fp_matrix)
-evaluation.evaluate(dp_predictions_bin, dp_expectations_bin, dp_predictions_segments, dp_expectations_segments, dp_predictions_labels, dp_expectations_labels, types, score_threshold_value)
+# evaluation.evaluate(dp_predictions_bin, dp_expectations_bin, dp_predictions_segments, dp_expectations_segments, dp_predictions_labels, dp_expectations_labels, types, score_threshold_value)
 
 #####################################################################################################################################################
 ################################# DEBUGGING #########################################################################################################
