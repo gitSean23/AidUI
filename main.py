@@ -1,3 +1,17 @@
+import os
+import subprocess
+
+# Get the current directory
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Construct the full path to run_dp_detection.sh
+script_path = os.path.join(current_dir, "run_dp_detection.sh")
+
+# Execute the script
+subprocess.run([script_path], shell=True)
+
+print("DONE WITH SCRIPT")
+
 import glob
 import text_analysis.pattern_matching.matching as pattern_matching
 import visual_analysis.histogram_analysis.histogram_analysis as histogram_analysis
@@ -8,7 +22,6 @@ import dp_resolver.resolver as resolver
 import evaluation.evaluation as evaluation
 from config import *
 import utils.utils as utils
-import subprocess
 
 import warnings
 warnings.filterwarnings('ignore')
@@ -16,12 +29,12 @@ warnings.filterwarnings('ignore')
 # get input image files
 img_files = [file for file in glob.glob("UIED/data/input/" + "*.*")]
 img_files.sort()
-# print(img_files)
+#print(img_files)
 
 # get OCR files
 ocr_files = [file for file in glob.glob("UIED/data/output/ocr/" + "*.json")]
 ocr_files.sort()
-# print(ocr_files)
+#print(ocr_files)
 
 # predictions, expectations and types
 dp_predictions_labels = []
@@ -62,8 +75,6 @@ for i in range(len(ocr_files)):
     dp_predictions_labels.append(dp_predicted["labels"]) # dp_predicted["labels"] is an array of labels
     dp_predictions_bin.append(dp_predicted["labels_binarization"]) # dp_predicted["labels_binarization"] is an array of 0/1 binary values
     dp_predictions_segments.append(dp_predicted["segments"]) # dp_predicted["segments"] is an array of segment objects'
-
-    print(subprocess.run(["/run_dp_detection.sh"], shell=True))
 
     # print("------------dp ground truth-----------")
     # dp_ground_truth = evaluation.get_dp_ground_truth(image_file)
