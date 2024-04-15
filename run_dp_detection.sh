@@ -43,6 +43,7 @@ then
   sleep 2s
   cd ../UIED/
   python run_uied.py
+  echo "Run Main"
   conda activate dl_dp_obj_det_env
 
 #   echo "--------------------------------------execute DP detection & evaluation--------------------------------------"

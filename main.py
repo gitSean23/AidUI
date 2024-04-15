@@ -10,8 +10,6 @@ script_path = os.path.join(current_dir, "run_dp_detection.sh")
 # Execute the script
 subprocess.run([script_path], shell=True)
 
-print("DONE WITH SCRIPT")
-
 import glob
 import text_analysis.pattern_matching.matching as pattern_matching
 import visual_analysis.histogram_analysis.histogram_analysis as histogram_analysis
