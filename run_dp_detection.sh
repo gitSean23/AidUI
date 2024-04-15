@@ -21,10 +21,10 @@ then
   echo "--------------------------------------input UIs copied to input folder--------------------------------------"
 
   echo "--------------------------------------create object detection and UIED directories--------------------------------------"
-  #mkdir ./object_detection/object_detection_frcnn_mscoco_boilerplate/inference_data/
-  #mkdir ./object_detection/object_detection_frcnn_mscoco_boilerplate/inference_data/test
-  #mkdir ./object_detection/object_detection_frcnn_mscoco_boilerplate/inference_output/
-  #mkdir ./UIED/data/input/
+#  mkdir ./object_detection/object_detection_frcnn_mscoco_boilerplate/inference_data/
+#  mkdir ./object_detection/object_detection_frcnn_mscoco_boilerplate/inference_data/test
+#  mkdir ./object_detection/object_detection_frcnn_mscoco_boilerplate/inference_output/
+#  mkdir ./UIED/data/input/
 
   cp ./input/*.* ./object_detection/object_detection_frcnn_mscoco_boilerplate/inference_data/test
   cd ./object_detection/object_detection_frcnn_mscoco_boilerplate
@@ -34,7 +34,7 @@ then
 
   echo "---------------activate UIED env (dp_uied3), iteratively copy input files & conduct text extraction---------------"
   conda activate dp_uied3
-  mkdir ./tmp_input/
+#  mkdir ./tmp_input/
   destdir="./tmp_input/"
   cp ./input/*.* $destdir
   cd $destdir

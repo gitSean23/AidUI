@@ -5,6 +5,7 @@ __pycache__/
 UIED/data/input/
 UIED/data/output/
 UIED/detect_text/ocr.py
+
 # object detection dirs
 object_detection/synthetic_data_generation/input/
 object_detection/synthetic_data_generation/output/
