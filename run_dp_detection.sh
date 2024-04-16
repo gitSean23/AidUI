@@ -7,7 +7,7 @@ echo "---------------activate object detection env (dl_dp_obj_det_env), copy inp
 conda activate dl_dp_obj_det_env
 
 # create ./input directory
-#mkdir ./input/
+# mkdir ./input/
 
 # input to turn on evaluation mode
 
@@ -17,7 +17,7 @@ EVAL_MODE="on"
 if [[ $EVAL_MODE = "on" ]]
 then
   echo "EVAL MODE is ON"
-  #python -c "import evaluation.evaluation as evaluation; evaluation.set_evaluation_data()"
+  # python -c "import evaluation.evaluation as evaluation; evaluation.set_evaluation_data()"
   echo "--------------------------------------input UIs copied to input folder--------------------------------------"
 
   echo "--------------------------------------create object detection and UIED directories--------------------------------------"
@@ -43,7 +43,7 @@ then
   sleep 2s
   cd ../UIED/
   python run_uied.py
-  echo "Run Main"
+  echo "---------------activate object detection env------------------------------"
   conda activate dl_dp_obj_det_env
 
 #   echo "--------------------------------------execute DP detection & evaluation--------------------------------------"

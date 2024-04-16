@@ -50,7 +50,6 @@ score_threshold_value = .75
 
 # initialize tp fp 2D matrix
 # tp_fp_matrix = evaluation.init_tp_fp_matrix()
-
 # iterate over the OCR files
 for i in range(len(ocr_files)):
     print(i, ". processing: ", img_files[i])
@@ -82,7 +81,7 @@ for i in range(len(ocr_files)):
     # types.append(dp_ground_truth["type"])
 
     # print("------------predicted and ground truth labels-----------")
-    # print("dp_predicted[labels]", dp_predicted["labels"])
+    print("dp_predicted[labels]", dp_predicted["labels"])
     # print("dp_ground_truth[labels]", dp_ground_truth["labels"])
 
     # drawing ground truth and predicted bboxes
