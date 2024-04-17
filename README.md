@@ -116,48 +116,35 @@ conda info --envs
 For AidUI, two conda environments need to be setup: _**"dl_dp_obj_det_env"**_ and _**"dp_uied3"**_
 
 We provide the specification files to build identical conda environments as ours:
-- _**"dl_dp_obj_det_env"**_: [env_specification_files/dl_dp_obj_det_env.txt](env_specification_files/dl_dp_obj_det_env.txt)
-- _**"dp_uied3"**_: [env_specification_files/dp_uied3.txt](env_specification_files/dp_uied3.txt)
+- _**"dl_dp_obj_det_env"**_: [dl_enviornment.yml](dl_enviornment.yml)
+- _**"dp_uied3"**_: [dp_enviornment.yml](dp_enviornment.yml)
 
 Following commands can be used to create the required environments from the root of the cloned repository:
 ```bash
-conda create --name dl_dp_obj_det_env --file env_specification_files/dl_dp_obj_det_env.txt
+conda env create -f dl_enviornment.yml
 ```
 ```bash
-conda create --name dp_uied3 --file env_specification_files/dp_uied3.txt
+conda env create -f dp_enviornment.yml
+```
+4. Activate the environments and run the following command in each environment:
+```bash
+python -m spacy download en_core_web_trf
 ```
 
-4. #### Download and setup Visual Cue Detection model
+6. #### Download and setup Visual Cue Detection model
 - Download the pretrained Visual Cue Detection model from [here](https://github.com/SageSELab/AidUI/releases/download/v-ICSE'23-data/trained-visual-cue-detection-model.pth).
 
 - Then, copy the downloaded model into the destination dir: ```AidUI/object_detection/object_detection_frcnn_mscoco_boilerplate/```
 
-5. #### Run AidUI
+6. #### Run AidUI
 - Move to the root directory of AidUI
 
 - Execute the following command to run AidUI
 ```bash
-./run_dp_detection.sh
+python main.py
 ```
-- You should see the following prompt:
-```
-turn on evaluation mode? answer with y/n
-```
-- Type y and press ENTER
-
-- The process usually takes around 1.5 hours (based on our experience on Ubuntu 20.04.2 LTS).
 
 
-## Part3: Datasets and model for AidUI
-_CONTEXTDP_, the evaluation dataset for AidUI, contains 162 web and 339 mobile screenshots depicting 301 DP and 243 Non-DP instances. We make this dataset fully open source to encourage future work on automated DP detection and localization.
-
-_CONTEXTDP_ is provided along with this repository in the directory location: ```AidUI/evaluation/evaluation_dataset/```. It is also available [here](https://github.com/SageSELab/AidUI/releases/download/v-ICSE'23-data/AidUI-Evaluation-Dataset.tar.gz).
-
-We also provide the Visual Cue Detection model and the training dataset for it.
-
-Download the pre-trained Visual Cue Detection model from [here](https://github.com/SageSELab/AidUI/releases/download/v-ICSE'23-data/trained-visual-cue-detection-model.pth).
-
-The training dataset is available [here](https://www.dropbox.com/s/s1mihip6eupspir/AidUI-Object-Detection-Dataset-Master.tar.gz?dl=0).
 
 
 ## References
