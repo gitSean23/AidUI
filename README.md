@@ -98,7 +98,7 @@ turn on evaluation mode? answer with y/n
 
 ### Install and Run AidUI without Docker (Ubuntu Only)
 
-**NOTE**: ***Our provided instructions for installing AidUI are currently only applicable to Ubuntu 20.04.2 LTS (although other recent versions of Ubuntu should be fine), due to the specific Anaconda packages required. As such, these instructions will likely not work on Windows or mcOS.*** 
+**NOTE**: ***Our provided instructions for installing AidUI are currently only applicable to Ubuntu 20.04.2 LTS (although other recent versions of Ubuntu should be fine)*** 
 
 To setup and run AidUI, following steps need to be done.
 
@@ -126,11 +126,17 @@ conda env create -f dl_enviornment.yml
 ```bash
 conda env create -f dp_enviornment.yml
 ```
-4. Activate the environments and run the following command in each environment:
+4. Activate the environments with these commands and run the following command in each environment:
+```bash
+conda activate dl_dp_obj_det_env
+```
+```bash
+conda activate dp_uied3
+```
 ```bash
 python -m spacy download en_core_web_trf
 ```
-5.#### Download and setup CNN Rico Model
+5. #### Download and setup CNN Rico Model
 - Download the CNN Rico model from [here](https://drive.google.com/file/d/1Gzpi-V_Sj7SSFQMNzy6bcgkEwaZBhGWS/view).
 
 - Then, copy the downloaded model into the destination dir: ```/root/.cache/torch/hub/checkpoints/```
