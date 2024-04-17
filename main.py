@@ -1,3 +1,15 @@
+import os
+import subprocess
+
+# Get the current directory
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Construct the full path to run_dp_detection.sh
+script_path = os.path.join(current_dir, "run_dp_detection.sh")
+
+# Execute the script
+subprocess.run([script_path], shell=True)
+
 import glob
 import text_analysis.pattern_matching.matching as pattern_matching
 import visual_analysis.histogram_analysis.histogram_analysis as histogram_analysis
@@ -15,12 +27,12 @@ warnings.filterwarnings('ignore')
 # get input image files
 img_files = [file for file in glob.glob("UIED/data/input/" + "*.*")]
 img_files.sort()
-# print(img_files)
+#print(img_files)
 
 # get OCR files
 ocr_files = [file for file in glob.glob("UIED/data/output/ocr/" + "*.json")]
 ocr_files.sort()
-# print(ocr_files)
+#print(ocr_files)
 
 # predictions, expectations and types
 dp_predictions_labels = []
@@ -38,7 +50,6 @@ score_threshold_value = .75
 
 # initialize tp fp 2D matrix
 # tp_fp_matrix = evaluation.init_tp_fp_matrix()
-
 # iterate over the OCR files
 for i in range(len(ocr_files)):
     print(i, ". processing: ", img_files[i])
@@ -60,17 +71,17 @@ for i in range(len(ocr_files)):
     dp_predicted = resolver.resolve_dp(input_to_resolver, score_threshold_value)
     dp_predictions_labels.append(dp_predicted["labels"]) # dp_predicted["labels"] is an array of labels
     dp_predictions_bin.append(dp_predicted["labels_binarization"]) # dp_predicted["labels_binarization"] is an array of 0/1 binary values
-    dp_predictions_segments.append(dp_predicted["segments"]) # dp_predicted["segments"] is an array of segment objects
+    dp_predictions_segments.append(dp_predicted["segments"]) # dp_predicted["segments"] is an array of segment objects'
 
     # print("------------dp ground truth-----------")
-    dp_ground_truth = evaluation.get_dp_ground_truth(image_file)
-    dp_expectations_labels.append(dp_ground_truth["labels"])
-    dp_expectations_bin.append(dp_ground_truth["labels_binarization"])
-    dp_expectations_segments.append(dp_ground_truth["segments"])
-    types.append(dp_ground_truth["type"])
+    # dp_ground_truth = evaluation.get_dp_ground_truth(image_file)
+    # dp_expectations_labels.append(dp_ground_truth["labels"])
+    # dp_expectations_bin.append(dp_ground_truth["labels_binarization"])
+    # dp_expectations_segments.append(dp_ground_truth["segments"])
+    # types.append(dp_ground_truth["type"])
 
     # print("------------predicted and ground truth labels-----------")
-    # print("dp_predicted[labels]", dp_predicted["labels"])
+    print("dp_predicted[labels]", dp_predicted["labels"])
     # print("dp_ground_truth[labels]", dp_ground_truth["labels"])
 
     # drawing ground truth and predicted bboxes
@@ -87,12 +98,12 @@ for i in range(len(ocr_files)):
     #     utils.print_dictionary(ui_dp, "ui_dp")
     #     print("########################################## DEBUG ####################################")
 
-    print("----------------------------------------------------------------------------------------------------------------------------------------------")
+    # print("----------------------------------------------------------------------------------------------------------------------------------------------")
 
 # evaluation
 # tp_fp_matrix = evaluation.set_tp_fp_matrix(dp_predictions_bin, dp_expectations_bin)
 # evaluation.print_tp_fp_matrix(tp_fp_matrix)
-evaluation.evaluate(dp_predictions_bin, dp_expectations_bin, dp_predictions_segments, dp_expectations_segments, dp_predictions_labels, dp_expectations_labels, types, score_threshold_value)
+# evaluation.evaluate(dp_predictions_bin, dp_expectations_bin, dp_predictions_segments, dp_expectations_segments, dp_predictions_labels, dp_expectations_labels, types, score_threshold_value)
 
 #####################################################################################################################################################
 ################################# DEBUGGING #########################################################################################################
