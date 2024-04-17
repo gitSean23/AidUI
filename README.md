@@ -130,21 +130,23 @@ conda env create -f dp_enviornment.yml
 ```bash
 python -m spacy download en_core_web_trf
 ```
+5.#### Download and setup CNN Rico Model
+- Download the CNN Rico model from [here](https://drive.google.com/file/d/1Gzpi-V_Sj7SSFQMNzy6bcgkEwaZBhGWS/view).
+
+- Then, copy the downloaded model into the destination dir: ```/root/.cache/torch/hub/checkpoints/```
 
 6. #### Download and setup Visual Cue Detection model
 - Download the pretrained Visual Cue Detection model from [here](https://github.com/SageSELab/AidUI/releases/download/v-ICSE'23-data/trained-visual-cue-detection-model.pth).
 
 - Then, copy the downloaded model into the destination dir: ```AidUI/object_detection/object_detection_frcnn_mscoco_boilerplate/```
 
-6. #### Run AidUI
+7. #### Run AidUI
 - Move to the root directory of AidUI
 
 - Execute the following command to run AidUI
 ```bash
 python main.py
 ```
-
-
 
 
 ## References
