@@ -18,11 +18,11 @@
   // Uncomment the next line to run commands after the container is created.
   "postCreateCommand": [
     "conda activate dl_dp_obj_det_env && python -m spacy download en_core_web_trf && conda activate dp_uied3 && python -m spacy download en_core_web_trf && bash ../model_setup.sh"
-  ]
+  ],
 
   // Configure tool-specific properties.
   // "customizations": {},
 
   // Uncomment to connect as an existing user other than the container default. More info: https://aka.ms/dev-containers-non-root.
-  // "remoteUser": "devcontainer"
+  "remoteUser": "root"
 }

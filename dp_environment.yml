@@ -268,9 +268,9 @@ dependencies:
   - tbb
   - tensorboard
   - tensorboard-data-server
-  # - tensorflow
-  # - tensorflow-base
-  # - tensorflow-estimator
+  - tensorflow
+  - tensorflow-base
+  - tensorflow-estimator
   - termcolor
   - thinc
   - threadpoolctl

@@ -26,8 +26,8 @@ ADD dl_environment.yml /tmp/dl_environment.yml
 ADD dp_environment.yml /tmp/dp_environment.yml
 
 # Create conda environments
-RUN conda clean -afy && conda env create -f /tmp/dl_environment.yml 
-RUN conda clean -afy && conda env create -f /tmp/dp_environment.yml
+RUN conda clean -afy && conda clean --packages && conda env create -f /tmp/dl_environment.yml 
+RUN conda clean -afy && conda clean --packages && conda env create -f /tmp/dp_environment.yml
 
 # Clean up and initialize conda for all shell types
 RUN conda clean -afy && conda init
