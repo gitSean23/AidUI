@@ -121,10 +121,10 @@ We provide the specification files to build identical conda environments as ours
 
 Following commands can be used to create the required environments from the root of the cloned repository:
 ```bash
-conda env create -f dl_enviornment.yml
+conda env create -f dl_environment.yml
 ```
 ```bash
-conda env create -f dp_enviornment.yml
+conda env create -f dp_environment.yml
 ```
 4. Activate the environments with these commands and run the following command in each environment:
 ```bash
@@ -148,6 +148,11 @@ python -m spacy download en_core_web_trf
 
 7. #### Run AidUI
 - Move to the root directory of AidUI
+
+- Activate this enviornment using this command:
+```bash
+conda activate dl_dp_obj_det_env
+```
 
 - Execute the following command to run AidUI
 ```bash

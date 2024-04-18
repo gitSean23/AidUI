@@ -73,19 +73,19 @@ for i in range(len(ocr_files)):
     dp_predictions_bin.append(dp_predicted["labels_binarization"]) # dp_predicted["labels_binarization"] is an array of 0/1 binary values
     dp_predictions_segments.append(dp_predicted["segments"]) # dp_predicted["segments"] is an array of segment objects'
 
-    # print("------------dp ground truth-----------")
-    # dp_ground_truth = evaluation.get_dp_ground_truth(image_file)
-    # dp_expectations_labels.append(dp_ground_truth["labels"])
-    # dp_expectations_bin.append(dp_ground_truth["labels_binarization"])
-    # dp_expectations_segments.append(dp_ground_truth["segments"])
-    # types.append(dp_ground_truth["type"])
+    print("------------dp ground truth-----------")
+    dp_ground_truth = evaluation.get_dp_ground_truth(image_file)
+    dp_expectations_labels.append(dp_ground_truth["labels"])
+    dp_expectations_bin.append(dp_ground_truth["labels_binarization"])
+    dp_expectations_segments.append(dp_ground_truth["segments"])
+    types.append(dp_ground_truth["type"])
 
     # print("------------predicted and ground truth labels-----------")
     print("dp_predicted[labels]", dp_predicted["labels"])
-    # print("dp_ground_truth[labels]", dp_ground_truth["labels"])
+    print("dp_ground_truth[labels]", dp_ground_truth["labels"])
 
     # drawing ground truth and predicted bboxes
-    # utils.draw_expectation_prediction_bbox(image_file, dp_ground_truth["segments"], dp_predicted["segments"], dp_ground_truth["labels"], dp_predicted["labels"])
+    utils.draw_expectation_prediction_bbox(image_file, dp_ground_truth["segments"], dp_predicted["segments"], dp_ground_truth["labels"], dp_predicted["labels"])
 
     # if(("NO DP" in dp_predicted["labels"])):
     #     # if(image_file == "UIED/data/input/music_30--Music-Bass-Equalizer-0-6_6cef.jpg"):
