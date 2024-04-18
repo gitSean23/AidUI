@@ -34,12 +34,12 @@ then
 
   echo "---------------activate UIED env (dp_uied3), iteratively copy input files & conduct text extraction---------------"
   conda activate dp_uied3
-#  mkdir ./tmp_input/
+  # mkdir ./tmp_input/
   destdir="./tmp_input/"
   cp ./input/*.* $destdir
   cd $destdir
-  find . -maxdepth 1 -type f |head -15|xargs cp -t "../UIED/data/input"
-  find . -maxdepth 1 -type f |head -15|xargs rm
+  find . -maxdepth 1 -type f |head -1|xargs cp -t "../UIED/data/input"
+  find . -maxdepth 1 -type f |head -1|xargs rm
   sleep 2s
   cd ../UIED/
   python run_uied.py
