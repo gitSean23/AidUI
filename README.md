@@ -149,6 +149,11 @@ python -m spacy download en_core_web_trf
 7. #### Run AidUI
 - Move to the root directory of AidUI
 
+- Activate this enviornment using this command:
+```bash
+conda activate dl_dp_obj_det_env
+```
+
 - Execute the following command to run AidUI
 ```bash
 python main.py
