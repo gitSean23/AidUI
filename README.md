@@ -109,6 +109,8 @@ Clone this repository by using the ```git clone``` command. If git is not alread
 To install Anaconda, please run these commands in your terminal:
 ```bash
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh
+```
+```bash
 bash ~/miniconda.sh
 ```
 
