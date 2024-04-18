@@ -121,10 +121,10 @@ We provide the specification files to build identical conda environments as ours
 
 Following commands can be used to create the required environments from the root of the cloned repository:
 ```bash
-conda env create -f dl_enviornment.yml
+conda env create -f dl_environment.yml
 ```
 ```bash
-conda env create -f dp_enviornment.yml
+conda env create -f dp_environment.yml
 ```
 4. Activate the environments with these commands and run the following command in each environment:
 ```bash
