@@ -288,7 +288,6 @@ dependencies:
   - zstd=1.5.5
   - pip:
       - curated-tokenizers==0.0.9
-      - curated-transformers==0.1.1
       - regex==2024.4.16
       - spacy-curated-transformers==0.2.2
 prefix: /root/miniconda3/envs/dl_dp_obj_det_env
