@@ -113,7 +113,7 @@ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/
 ```bash
 bash ~/miniconda.sh
 ```
-
+After this is done, restart your terminal.
 3. #### Setup the conda environments
 Installed Anaconda comes with a default conda environment _"base"_. We can check the available environments using the following command:
 ```bash
