@@ -13,7 +13,6 @@ directories = [
 # Iterate over the directories
 for directory in directories:
     # Check if the directory does not exist
-    print("Creating directory: ", directory)
     if not os.path.exists(directory):
         # Create the directory
         os.makedirs(directory)

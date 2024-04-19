@@ -28,4 +28,3 @@ echo "--------------------------------------input UIs copied to input folder----
   python run_uied.py
   echo "---------------activate object detection env------------------------------"
   conda activate dl_dp_obj_det_env
-fi
