@@ -10,12 +10,14 @@ directories = [
     './tmp_input/'
 ]
 
-# Iterate over the directories
-for directory in directories:
-    # Check if the directory does not exist
-    if not os.path.exists(directory):
+# Check if the directory does not exist
+if not os.path.exists('./input/'):
+    # Iterate over the directories
+    for directory in directories:
         # Create the directory
         os.makedirs(directory)
+    exit()
+
 
 # Get the current directory
 current_dir = os.path.dirname(os.path.abspath(__file__))
