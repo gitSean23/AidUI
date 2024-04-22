@@ -1,6 +1,24 @@
 import os
 import subprocess
 
+directories = [
+    './input/',
+    './object_detection/object_detection_frcnn_mscoco_boilerplate/inference_data/',
+    './object_detection/object_detection_frcnn_mscoco_boilerplate/inference_data/test',
+    './object_detection/object_detection_frcnn_mscoco_boilerplate/inference_output/',
+    './UIED/data/input/',
+    './tmp_input/'
+]
+
+# Check if the directory does not exist
+if not os.path.exists('./input/'):
+    # Iterate over the directories
+    for directory in directories:
+        # Create the directory
+        os.makedirs(directory)
+    exit()
+
+
 # Get the current directory
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
