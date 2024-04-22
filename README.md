@@ -152,7 +152,9 @@ python -m spacy download en_core_web_trf
 
 - Then, copy the downloaded model into the destination dir: ```AidUI/object_detection/object_detection_frcnn_mscoco_boilerplate/```
 
-7. #### Run AidUI
+7. Create a ocr key from [here](https://cloud.google.com/vision) and replace the existing API key in ```UIED/detect_text/ocr.py```
+
+8. #### Run AidUI
 - Move to the root directory of AidUI
 
 - Activate this enviornment using this command:
@@ -161,10 +163,15 @@ conda activate dl_dp_obj_det_env
 ```
 
 - Execute the following command to run AidUI
+- This will create the directories needed for the project when run for the first time.
 ```bash
 python main.py
 ```
-
+9. ####  Place the image you want to check for dark patterns in ```input```
+- Execute the following command to run AidUI
+```bash
+python main.py
+```
 
 ## References
 1. C. M. Gray, Y. Kou, B. Battles, J. Hoggatt, and A. L. Toombs. The dark (patterns) side of ux design. In Proceedings of the 2018 CHI Conference on Human Factors in Computing Systems, pages 1–14, 2018.
