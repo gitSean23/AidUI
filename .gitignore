@@ -1,6 +1,8 @@
 # pycache dirs
 __pycache__/
 
+**/.DS_Store
+
 # UIED dirs
 UIED/data/input/
 UIED/data/output/
